@@ -39,7 +39,8 @@ function App() {
       setMessages(prev => [...prev, aiMsg]);
     } catch (error) {
       console.error(error);
-      setMessages(prev => [...prev, { role: 'ai', content: "Error: Could not reach the server." }]);
+      const errorMessage = error instanceof Error ? error.message : "Error: Could not reach the server.";
+      setMessages(prev => [...prev, { role: 'ai', content: errorMessage }]);
     } finally {
       setIsLoading(false);
     }

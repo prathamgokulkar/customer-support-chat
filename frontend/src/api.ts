@@ -15,7 +15,7 @@ export async function sendMessage(message: string, sessionId?: string): Promise<
   });
 
   if (!response.ok) {
-    throw new Error("Failed to send message");
+    throw new Error(`Failed to send message to ${API_URL}/chat/message`);
   }
 
   return response.json();
