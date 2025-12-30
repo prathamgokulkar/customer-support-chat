@@ -13,6 +13,7 @@
     ],
     "rewrites": [
         { "source": "/api/(.*)", "destination": "/server/api/index.ts" },
-        { "source": "/(.*)", "destination": "/index.html" }
+        { "source": "/assets/(.*)", "destination": "/assets/$1" },
+        { "source": "/((?!api/|assets/|favicon.ico).*)", "destination": "/index.html" }
     ]
 }
