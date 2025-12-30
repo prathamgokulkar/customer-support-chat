@@ -3,6 +3,10 @@ import { handleMessage, getHistory } from "./services/chat";
 
 const router = Router();
 
+router.get("/", (req, res) => {
+  res.send("API is running");
+});
+
 router.post("/chat/message", async (req, res) => {
   const { message, sessionId } = req.body;
 
